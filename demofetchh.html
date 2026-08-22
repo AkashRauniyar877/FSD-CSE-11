@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+</head>
+<body>
+
+    <style>
+         table{
+           
+            margin: auto;
+            padding: 20px;
+            color: brown;
+            border: 2px solid blue;
+            background-color: bisque; 
+        }
+        body{
+            background-color: beige;
+        }
+
+
+    </style>
+    <h1 align="center">List of Products</h1>
+      <table border="1" cellpadding="4" cellspacing="0">
+        <th>
+            <tr>
+                <th>Sr No:</th>
+                <th>Tittle</th>
+                <th>Image</th>
+                 <th>Category</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th> Rating</th>
+                <th> Stock</th>
+                <th>Action</th>
+            </tr>
+        </th>
+        <tbody id="data1">
+
+        </tbody>
+    </table>
+
+    </body>
+
+    <script>
+        async function laodProduct(){
+            const URL="https://dummyjson.com/products?limit=200"
+            try{
+                const res = await fetch(URL);
+                const data = await res.json();
+                console.log("DATA", data.products)
+                let rows = "";
+                data.products.map((i,index) => {
+                    rows = rows +`<tr> 
+                         <td> ${index+1}</td>
+                      <td>  ${i.title} </td>
+                         <td><img src="${i.images[0]}" width="100px" height="100px">  </td>
+                          <td>   ${i.category} </td>
+                         <td>   ${i.description} </td>
+                           <td>   ₹ ${(i.price*rate).toFixed(2)} </td>
+                           <td> ${i.rating} </td>
+                           <td> ${i.stock} </td>
+                             
+                           <td> <button> Add to Cart </button></td>
+                        
+                        </tr>`
+                })
+
+                const ele = document.getElementById("data1");
+                ele.innerHTML = rows;
+
+            }
+            catch(err){
+                console.log("Error" ,err)
+            }
+
+        }
+
+         async function getRate(){
+                try{
+                    const URL="https://open.er-api.com/v6/latest/USD";
+                    const res = await fetch(URL)
+                    const data = await res.json()
+                    // console.log("rate = ", data.rates.INR)
+                    return Number(data.rates.INR)
+
+                }
+                catch(err){
+                    console.log("ERROR",err)
+            }
+            }
+
+
+        laodProduct();
+         const test =async () => {
+             rate = await getRate()
+        }
+        test();
+
+       
+    </script>
+    
+
+</html>
