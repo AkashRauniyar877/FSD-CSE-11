@@ -9,6 +9,7 @@ const student={
 // const branch=student.branch;
 
 // Destructuring
+
 const{name,age,branch}=student;
 console.log("Name=",name);
 console.log("Age=",age);
