@@ -1,0 +1,25 @@
+{
+  "name": "book_npm_app",
+  "version": "1.0.0",
+  "description": "My First book app using npm",
+  "keywords": [
+    "ReactJS"
+  ],
+  "license": "ISC",
+  "author": "Akash Rauniyar",
+  "type": "module",
+  "scripts": {
+    "start": " parcel index.html"
+   
+  },
+  "dependencies": {
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@babel/cli": "^8.0.4",
+    "@babel/core": "^8.0.1",
+    "@babel/preset-env": "^8.0.2",
+    "parcel": "^2.16.4"
+  }
+}
