@@ -1,7 +1,7 @@
+
 import Item from "./Item"
-//import { Outlet } from "react-router-dom"
-const Home = () => {
-  const itemData= [
+const ItemStore = () => {
+     const itemData= [
     {image:"https://cdn.simpleicons.org/react/61DAFB",title:"React.js",Price: 499},
     {image:"https://cdn.simpleicons.org/nodedotjs/339933",title:"Node.js",Price: 599},
     {image:"https://cdn.simpleicons.org/express/000000",title:"Express.js",Price:449},
@@ -21,4 +21,5 @@ const Home = () => {
   )
 }
 
-export default Home
+
+export default ItemStore
