@@ -1,0 +1,46 @@
+.item{
+    padding: 5px;
+    margin: 20px;
+     width: 280px;
+    height: 280px;
+    background-color: rgb(63, 96, 166);
+    border: 2px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    flex-direction: column;
+     transition: all 0.3s ease;
+}
+
+.item h2 {
+    color: rgb(6, 6, 6);
+    margin: 5px;
+    padding: 5px;
+}
+
+.item h3 {
+    color: rgb(22, 189, 223);
+    margin: 5px;
+    padding: 5px;
+}
+
+.btn{
+    width: 120px;
+    height: 30px;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    font-size: 10px;
+}
+
+.btn:hover{
+    background-color: rgb(70, 246, 138);
+    color: black;
+}
+
+.item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
